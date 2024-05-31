@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import { getUserData } from '@/api/getUserData'
+import { Skills } from '@/components/skills'
 import { Large } from '@/components/typography/large'
 import { Paragraph } from '@/components/typography/paragraph'
 
@@ -14,13 +15,15 @@ export default async function Home() {
           <Large>Home</Large>
         </div>
 
-        <Image
-          width={120}
-          height={120}
-          src={avatarURL}
-          alt={name}
-          className="rounded-xl"
-        />
+        <div className="h-32 w-32 rounded-full bg-black-200/90 p-2">
+          <Image
+            width={120}
+            height={120}
+            src={avatarURL}
+            alt={name}
+            className="rounded-full"
+          />
+        </div>
 
         <Paragraph>
           <mark className="rounded bg-black-200 px-0.5 font-medium text-white">
@@ -45,6 +48,8 @@ export default async function Home() {
           <Paragraph>
             Algumas tecnologias com as quais trabalho incluem:{' '}
           </Paragraph>
+
+          <Skills />
         </div>
       </div>
     </section>
