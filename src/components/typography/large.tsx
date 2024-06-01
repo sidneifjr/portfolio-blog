@@ -6,7 +6,7 @@ type LargeProps = {
 
 export function Large({ children }: LargeProps) {
   return (
-    <p className="text-black-200 scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl">
+    <p className="scroll-m-20 text-4xl font-bold tracking-tight text-black-200 lg:text-5xl">
       {children}
     </p>
   )
