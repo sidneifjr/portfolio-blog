@@ -15,8 +15,6 @@ type PostTypes = {
 }
 
 export function Post({ slug, title, description, date, image }: PostTypes) {
-  console.log(image)
-
   return (
     <div className="flex flex-1 gap-4 border-b px-2 py-4">
       <div className="flex items-center rounded-md bg-black-200">
@@ -41,7 +39,7 @@ export function Post({ slug, title, description, date, image }: PostTypes) {
 
         <Paragraph>{description}</Paragraph>
 
-        <Link className="w-max" href={slug}>
+        <Link className="w-max" href={`/blog/posts/${slug}`}>
           <Button>Leia mais</Button>
         </Link>
       </div>

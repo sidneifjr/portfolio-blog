@@ -1,22 +1,5 @@
 /** @type {import('next').NextConfig} */
-
-import withMDX from '@next/mdx'
-
 const nextConfig = {
-  experimental: {
-    turbo: {
-      resolveExtensions: [
-        '.mdx',
-        '.tsx',
-        '.ts',
-        '.jsx',
-        '.js',
-        '.mjs',
-        '.json',
-      ],
-    },
-  },
-
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -37,4 +20,4 @@ const nextConfig = {
   },
 }
 
-export default withMDX({ extension: /\.mdx?$/ })(nextConfig)
+export default nextConfig

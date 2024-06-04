@@ -9,8 +9,8 @@ import resendImage from '../../assets/blog/sending-email-with-next-15-and-resend
 const posts = [
   {
     id: 1,
-    slug: '/newest-post',
-    image: resendImage,
+    slug: 'middleware',
+    image: resendImage.src,
     title: 'Protecting your digital assets',
     date: new Date(),
     description:
@@ -19,9 +19,9 @@ const posts = [
 
   {
     id: 2,
-    slug: '/post-1',
+    slug: 'post-1',
     title: 'Post 1',
-    image: resendWhite,
+    image: resendWhite.src,
     date: new Date(),
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -29,9 +29,9 @@ const posts = [
 
   {
     id: 3,
-    slug: '/post-2',
+    slug: 'post-2',
     title: 'Post 2',
-    image: resendBlack,
+    image: resendBlack.src,
     date: new Date(),
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -39,7 +39,7 @@ const posts = [
 
   {
     id: 4,
-    slug: '/post-3',
+    slug: 'post-3',
     title: 'Post 3',
     image: '',
     date: new Date(),
@@ -49,7 +49,7 @@ const posts = [
 
   {
     id: 5,
-    slug: '/post-4',
+    slug: 'post-4',
     title: 'Post 4',
     image: '',
     date: new Date(),
@@ -74,7 +74,7 @@ export default function Blog() {
             title={highlightedPost.title}
             description={highlightedPost.description}
             date={highlightedPost.date}
-            image={highlightedPost.image}
+            image={String(highlightedPost.image)}
           />
 
           <div className="col-span-6 flex flex-col">

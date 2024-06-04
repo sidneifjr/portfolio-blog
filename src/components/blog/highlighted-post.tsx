@@ -21,8 +21,6 @@ export function HighlightedPost({
   date,
   image,
 }: HighlightedPostTypes) {
-  console.log(image)
-
   return (
     <div className="col-span-6 flex flex-col rounded-md border">
       <div className="flex h-full flex-col justify-end gap-4 p-8">
@@ -45,7 +43,7 @@ export function HighlightedPost({
 
         <Paragraph>{description}</Paragraph>
 
-        <Link className="w-max" href={slug}>
+        <Link className="w-max" href={`/blog/${slug}`}>
           <Button>Leia mais</Button>
         </Link>
       </div>
