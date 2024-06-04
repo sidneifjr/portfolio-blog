@@ -1,10 +1,10 @@
+import resendBlack from 'public/blog/resend-icon-black.png'
+import resendWhite from 'public/blog/resend-icon-white.png'
+import resendImage from 'public/blog/sending-email-with-next-15-and-resend-using-server-actions.png'
+
 import { HighlightedPost } from '@/components/blog/highlighted-post'
 import { Post } from '@/components/blog/post'
 import { Large } from '@/components/typography/large'
-
-import resendBlack from '../../assets/blog/resend-icon-black.png'
-import resendWhite from '../../assets/blog/resend-icon-white.png'
-import resendImage from '../../assets/blog/sending-email-with-next-15-and-resend-using-server-actions.png'
 
 const posts = [
   {

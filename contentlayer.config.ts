@@ -35,6 +35,7 @@ export const Doc = defineDocumentType(() => ({
 
     description: {
       type: 'string',
+      required: false,
     },
 
     date: {
@@ -43,7 +44,7 @@ export const Doc = defineDocumentType(() => ({
     },
 
     image: {
-      type: 'image',
+      type: 'string',
       required: false,
     },
   },

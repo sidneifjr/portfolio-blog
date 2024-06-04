@@ -30,7 +30,7 @@ export function HighlightedPost({
           width={0}
           height={0}
           sizes="100vw"
-          className="h-full w-full object-contain"
+          className="h-full w-full rounded bg-black-200 object-contain"
         />
 
         <div className="flex max-w-96 flex-col gap-1">
