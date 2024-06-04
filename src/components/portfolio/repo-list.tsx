@@ -44,7 +44,7 @@ export async function RepoList() {
       id,
       topics,
       description,
-      private: isRepoPrivate,
+      private: isPrivate,
       html_url: htmlURL,
       homepage,
     } = repo
@@ -53,40 +53,44 @@ export async function RepoList() {
 
     const repoImageSrc = repoImage?.image.src
 
-    if (!isRepoPrivate) {
+    if (!isPrivate && repoImageSrc) {
       return (
         <div
-          className="relative col-span-4 flex h-96 flex-col justify-end p-4 pr-8 before:absolute before:bottom-0 before:left-0 before:top-0 before:z-[-1] before:h-full before:w-full before:bg-black/35 before:transition-all hover:before:bg-black/0"
+          className="group relative col-span-4 flex h-96 flex-col justify-end p-4 pr-8 before:absolute before:bottom-0 before:left-0 before:top-0 before:z-[-1] before:h-full before:w-full before:bg-black/55 before:transition-all hover:before:bg-black/0"
           key={id}
         >
-          <Image
-            src={repoImageSrc!}
-            alt={name}
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="absolute bottom-0 left-0 top-0 -z-10 h-auto w-full"
-          />
-
-          <H2>
-            <span className="capitalize text-white">
-              {name.replaceAll('-', ' ')}
-            </span>
-          </H2>
-
-          <div className="flex-1">
-            <Paragraph>
-              <span className="block text-white">{description}</span>
-            </Paragraph>
+          <div className="absolute bottom-0 left-0 top-0 -z-10 h-auto w-full bg-black-200">
+            <Image
+              src={repoImageSrc}
+              alt={name}
+              width={0}
+              height={0}
+              sizes="100vw"
+              className="h-full w-full object-contain"
+            />
           </div>
 
-          <span className="mb-4 flex items-start gap-2 pt-2 text-sm capitalize">
-            <Badge className="px-1.5">Stack</Badge>
+          <div className="flex flex-1 flex-col transition-opacity group-hover:opacity-0">
+            <H2>
+              <span className="capitalize text-white">
+                {name.replaceAll('-', ' ')}
+              </span>
+            </H2>
 
-            <span className="text-white">
-              {topics.join(', ').replaceAll('-', ' ')}
+            <div className="flex-1">
+              <Paragraph>
+                <span className="block text-white">{description}</span>
+              </Paragraph>
+            </div>
+
+            <span className="mb-4 flex items-start gap-2 pt-2 text-sm capitalize">
+              <Badge className="px-1.5">Stack</Badge>
+
+              <span className="text-white">
+                {topics.join(', ').replaceAll('-', ' ')}
+              </span>
             </span>
-          </span>
+          </div>
 
           <div className="flex gap-2">
             {homepage && (
@@ -96,7 +100,9 @@ export async function RepoList() {
             )}
 
             <Link href={htmlURL} target="_blank">
-              <Button variant="default">Github</Button>
+              <Button variant="default" className="bg-blue">
+                Github
+              </Button>
             </Link>
           </div>
         </div>
