@@ -1,13 +1,15 @@
-import { ReactNode } from 'react'
+import { HTMLAttributes, ReactNode } from 'react'
+import { twMerge } from 'tailwind-merge'
 
-type SmallProps = {
+interface SmallProps extends HTMLAttributes<HTMLSpanElement> {
   children: ReactNode
 }
 
-export function Small({ children }: SmallProps) {
-  return (
-    <span className="text-sm leading-none text-muted-foreground">
-      {children}
-    </span>
+export function Small({ children, className }: SmallProps) {
+  const classes = twMerge(
+    'text-sm leading-none text-muted-foreground',
+    className,
   )
+
+  return <span className={classes}>{children}</span>
 }

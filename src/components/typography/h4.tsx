@@ -1,13 +1,15 @@
-import { ReactNode } from 'react'
+import { HTMLAttributes, ReactNode } from 'react'
+import { twMerge } from 'tailwind-merge'
 
-type H4Props = {
+interface H4Props extends HTMLAttributes<HTMLHeadingElement> {
   children: ReactNode
 }
 
-export function H4({ children }: H4Props) {
-  return (
-    <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
-      {children}
-    </h4>
+export function H4({ children, className }: H4Props) {
+  const classes = twMerge(
+    'scroll-m-20 text-xl font-semibold tracking-tight',
+    className,
   )
+
+  return <h4 className={classes}>{children}</h4>
 }

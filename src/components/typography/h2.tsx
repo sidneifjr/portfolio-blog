@@ -1,13 +1,15 @@
-import { ReactNode } from 'react'
+import { HTMLAttributes, ReactNode } from 'react'
+import { twMerge } from 'tailwind-merge'
 
-type H2Props = {
+interface H2Props extends HTMLAttributes<HTMLHeadingElement> {
   children: ReactNode
 }
 
-export function H2({ children }: H2Props) {
-  return (
-    <h2 className="scroll-m-20 text-3xl font-semibold tracking-tight">
-      {children}
-    </h2>
+export function H2({ children, className }: H2Props) {
+  const classes = twMerge(
+    'scroll-m-20 text-3xl font-semibold tracking-tight',
+    className,
   )
+
+  return <h2 className={classes}>{children}</h2>
 }

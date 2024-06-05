@@ -1,9 +1,12 @@
-import { ReactNode } from 'react'
+import { HTMLAttributes, ReactNode } from 'react'
+import { twMerge } from 'tailwind-merge'
 
-type LeadProps = {
+interface LeadProps extends HTMLAttributes<HTMLParagraphElement> {
   children: ReactNode
 }
 
-export function Lead({ children }: LeadProps) {
-  return <p className="text-xl text-muted-foreground">{children}</p>
+export function Lead({ children, className }: LeadProps) {
+  const classes = twMerge('text-xl text-muted-foreground', className)
+
+  return <p className={classes}>{children}</p>
 }
