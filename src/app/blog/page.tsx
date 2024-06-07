@@ -41,7 +41,7 @@ const posts = [
     id: 4,
     slug: 'post-3',
     title: 'Post 3',
-    image: '',
+    image: resendWhite.src,
     date: new Date(),
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -51,7 +51,7 @@ const posts = [
     id: 5,
     slug: 'post-4',
     title: 'Post 4',
-    image: '',
+    image: resendBlack.src,
     date: new Date(),
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -78,7 +78,7 @@ export default function Blog() {
           />
 
           <div className="col-span-6 flex flex-col">
-            <ul className="grid-cols-12">
+            <ul className="flex grid-cols-12 flex-col gap-4">
               {otherPosts.map((post) => {
                 const { id, slug, title, description, date, image } = post
 

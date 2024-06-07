@@ -22,7 +22,7 @@ export function HighlightedPost({
   image,
 }: HighlightedPostTypes) {
   return (
-    <div className="col-span-6 flex flex-col rounded-md border">
+    <div className="col-span-6 flex flex-col rounded-md border transition-shadow hover:shadow-md">
       <div className="flex h-full flex-col justify-end gap-4 p-8">
         <Image
           src={image}
@@ -34,10 +34,7 @@ export function HighlightedPost({
         />
 
         <div className="flex max-w-96 flex-col gap-1">
-          <Small>
-            <span>{date.toLocaleDateString()}</span>
-          </Small>
-
+          <Small>{date.toLocaleDateString()}</Small>
           <Large>{title}</Large>
         </div>
 

@@ -1,9 +1,8 @@
-import Image from 'next/image'
-
 import { getUserData } from '@/api/getUserData'
 import { Skills } from '@/components/skills'
 import { Large } from '@/components/typography/large'
 import { Paragraph } from '@/components/typography/paragraph'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 export default async function Home() {
   const { name, location, avatarURL } = await getUserData()
@@ -16,13 +15,10 @@ export default async function Home() {
         </div>
 
         <div className="h-32 w-32 rounded-full bg-black-200/90 p-2">
-          <Image
-            width={120}
-            height={120}
-            src={avatarURL}
-            alt={name}
-            className="rounded-full"
-          />
+          <Avatar className="flex h-full w-full rounded-full">
+            <AvatarImage src={avatarURL} width={120} height={120} />
+            <AvatarFallback className="text-lg">SF</AvatarFallback>
+          </Avatar>
         </div>
 
         <Paragraph>

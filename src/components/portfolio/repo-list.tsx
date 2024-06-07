@@ -56,25 +56,23 @@ export async function RepoList() {
     if (!isPrivate && repoImageSrc) {
       return (
         <div
-          className="group relative col-span-4 flex h-96 flex-col justify-end p-4 pr-8 before:absolute before:bottom-0 before:left-0 before:top-0 before:z-[-1] before:h-full before:w-full before:bg-black/55 before:transition-all hover:before:bg-black/0"
+          className="group relative col-span-4 flex h-96 flex-col justify-end rounded p-4 pr-8 before:absolute before:bottom-0 before:left-0 before:top-0 before:z-[-1] before:h-full before:w-full before:rounded-md before:bg-black/55 before:transition-all hover:before:bg-black/0"
           key={id}
         >
-          <div className="absolute bottom-0 left-0 top-0 -z-10 h-auto w-full bg-black-200">
+          <div className="absolute bottom-0 left-0 top-0 -z-10 h-auto w-full rounded-md bg-black-200">
             <Image
               src={repoImageSrc}
               alt={name}
               width={0}
               height={0}
               sizes="100vw"
-              className="h-full w-full object-contain"
+              className="h-full w-full rounded-md object-contain"
             />
           </div>
 
           <div className="flex flex-1 flex-col transition-opacity group-hover:opacity-0">
-            <H2>
-              <span className="capitalize text-white">
-                {name.replaceAll('-', ' ')}
-              </span>
+            <H2 className="capitalize text-white">
+              {name.replaceAll('-', ' ')}
             </H2>
 
             <div className="flex-1">
@@ -100,7 +98,7 @@ export async function RepoList() {
             )}
 
             <Link href={htmlURL} target="_blank">
-              <Button variant="default" className="bg-blue">
+              <Button variant="default" className="bg-blue hover:bg-blue/80">
                 Github
               </Button>
             </Link>
