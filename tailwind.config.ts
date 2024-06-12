@@ -60,6 +60,12 @@ const config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translate3d(50%, 0, 0)' },
+          '100%': { opacity: '1', transform: 'translate3d(0, 0, 0)' },
+        },
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
