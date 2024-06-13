@@ -3,6 +3,7 @@ import './globals.css'
 import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
 import { ReactNode } from 'react'
+import { Toaster } from 'sonner'
 
 import { SideMenu } from '@/components/nav/side-menu'
 
@@ -27,6 +28,8 @@ export default function RootLayout({
 
           {children}
         </main>
+
+        <Toaster />
       </body>
     </html>
   )

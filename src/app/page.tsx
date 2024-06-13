@@ -2,6 +2,7 @@ import { FileText } from 'lucide-react'
 
 import { getUserData } from '@/api/getUserData'
 import { Skills } from '@/components/skills'
+import { H3 } from '@/components/typography/h3'
 import { Large } from '@/components/typography/large'
 import { Paragraph } from '@/components/typography/paragraph'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
@@ -17,8 +18,8 @@ export default async function Home() {
           <Large>Home</Large>
         </div>
 
-        <div className="flex gap-4">
-          <div className="h-48 w-48 animate-fadeIn rounded-full bg-black-200/90 p-2 transition-all">
+        <div className="flex animate-fadeIn gap-4 transition-all">
+          <div className="h-48 w-48 rounded-full bg-black-200/90 p-2">
             <Avatar className="flex h-full w-full rounded-full">
               <AvatarImage src={avatarURL} width={160} height={160} />
               <AvatarFallback className="text-lg">SF</AvatarFallback>
@@ -49,16 +50,16 @@ export default async function Home() {
           </div>
         </div>
 
-        <Paragraph>
-          Algumas tecnologias com as quais trabalho incluem:{' '}
-        </Paragraph>
+        <div className="flex flex-col gap-4">
+          <H3>Stack</H3>
 
-        <Skills />
+          <Skills />
 
-        <Button variant="cta" className="flex max-w-max gap-2 bg-blue">
-          <FileText />
-          Currículo
-        </Button>
+          <Button variant="cta" className="flex max-w-max gap-2 bg-blue">
+            <FileText />
+            Currículo
+          </Button>
+        </div>
       </div>
     </section>
   )
