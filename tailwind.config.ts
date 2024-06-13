@@ -60,10 +60,21 @@ const config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      animation: {
+        fadeIn: 'fadeIn 0.5s cubic-bezier(0.33, 1, 0.68, 1)',
+      },
       keyframes: {
         fadeIn: {
-          '0%': { opacity: '0', transform: 'translate3d(50%, 0, 0)' },
-          '100%': { opacity: '1', transform: 'translate3d(0, 0, 0)' },
+          '0%': {
+            opacity: '0',
+            transform: 'translate3d(-5%, 0, 0)',
+            zIndex: '-10',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translate3d(0, 0, 0)',
+            zIndex: '1',
+          },
         },
       },
     },

@@ -56,7 +56,7 @@ export async function RepoList() {
     if (!isPrivate && repoImageSrc) {
       return (
         <div
-          className="group relative col-span-4 flex h-96 flex-col justify-end rounded p-4 pr-8 before:absolute before:bottom-0 before:left-0 before:top-0 before:z-[-1] before:h-full before:w-full before:rounded-md before:bg-black/55 before:transition-all hover:before:bg-black/0"
+          className="group relative col-span-4 flex h-96 animate-fadeIn flex-col justify-end rounded p-4 pr-8 transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-[-1] before:h-full before:w-full before:rounded-md before:bg-black/55 before:transition-all hover:before:bg-black/0"
           key={id}
         >
           <div className="absolute bottom-0 left-0 top-0 -z-10 h-auto w-full rounded-md bg-black-200">
@@ -98,9 +98,7 @@ export async function RepoList() {
             )}
 
             <Link href={htmlURL} target="_blank">
-              <Button variant="default" className="bg-blue hover:bg-blue/80">
-                Github
-              </Button>
+              <Button variant="cta">Github</Button>
             </Link>
           </div>
         </div>

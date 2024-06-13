@@ -31,11 +31,11 @@ export function Skills() {
   ]
 
   return (
-    <ul className="flex w-full max-w-[656px] flex-wrap gap-y-6 pb-12 pt-8 sm:gap-12 sm:gap-y-0">
+    <ul className="grid w-full grid-cols-12 flex-wrap gap-y-6 pt-2 sm:gap-4 sm:gap-y-0">
       {skills.map((skill) => (
         <li
           key={crypto.randomUUID()}
-          className="font-secondary flex basis-[33%] flex-col items-center justify-center gap-3 text-white sm:flex-1"
+          className="font-secondary col-span-1 flex flex-col items-center justify-center gap-3 rounded bg-slate-600 p-4 text-white"
         >
           <Image
             width={56}
@@ -43,12 +43,10 @@ export function Skills() {
             className="h-10 w-10 sm:h-14 sm:w-14"
             src={skill.image}
             alt={skill.name}
-            quality={80}
+            quality={90}
           />
 
-          <span className="font-medium text-muted-foreground">
-            {skill.name}
-          </span>
+          <span className="font-medium text-white">{skill.name}</span>
         </li>
       ))}
     </ul>

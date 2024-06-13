@@ -68,7 +68,7 @@ export default function Blog() {
           <Large>Blog</Large>
         </div>
 
-        <div className="grid min-h-96 grid-cols-12 gap-4">
+        <div className="grid min-h-96 animate-fadeIn grid-cols-12 gap-4 transition-all">
           <HighlightedPost
             slug={highlightedPost.slug}
             title={highlightedPost.title}

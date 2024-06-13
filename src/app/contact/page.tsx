@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 import { Large } from '@/components/typography/large'
+import { Paragraph } from '@/components/typography/paragraph'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -18,8 +19,11 @@ export default async function Contact() {
           <Large>Contact</Large>
         </div>
 
-        <div className="flex flex-col gap-8">
-          <Large>Want to talk?</Large>
+        <div className="flex animate-fadeIn flex-col gap-8 transition-all">
+          <Paragraph className="max-w-[600px]">
+            Atualmente, estou à procura de novos desafios e aberto à novas
+            oportunidades, sejam fixas ou propostas de freelancer.
+          </Paragraph>
 
           <form className="flex max-w-[600px] flex-col gap-6">
             <div className="flex w-full gap-6">
@@ -44,7 +48,10 @@ export default async function Contact() {
               <Textarea name="message" />
             </fieldset>
 
-            <Button type="submit" className="max-w-max self-end">
+            <Button
+              type="submit"
+              className="max-w-max self-end bg-blue hover:bg-blue/80"
+            >
               Send message
             </Button>
           </form>

@@ -9,7 +9,7 @@ import { SideMenu } from '@/components/nav/side-menu'
 export const metadata: Metadata = {
   title: {
     template: '%s | Sidnei Farias',
-    default: 'Sidnei Farias',
+    default: 'Home | Sidnei Farias',
   },
   description: '',
 }

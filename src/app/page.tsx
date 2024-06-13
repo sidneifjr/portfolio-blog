@@ -1,8 +1,11 @@
+import { FileText } from 'lucide-react'
+
 import { getUserData } from '@/api/getUserData'
 import { Skills } from '@/components/skills'
 import { Large } from '@/components/typography/large'
 import { Paragraph } from '@/components/typography/paragraph'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 
 export default async function Home() {
   const { name, location, avatarURL } = await getUserData()
@@ -14,39 +17,48 @@ export default async function Home() {
           <Large>Home</Large>
         </div>
 
-        <div className="h-32 w-32 rounded-full bg-black-200/90 p-2">
-          <Avatar className="flex h-full w-full rounded-full">
-            <AvatarImage src={avatarURL} width={120} height={120} />
-            <AvatarFallback className="text-lg">SF</AvatarFallback>
-          </Avatar>
+        <div className="flex gap-4">
+          <div className="h-48 w-48 animate-fadeIn rounded-full bg-black-200/90 p-2 transition-all">
+            <Avatar className="flex h-full w-full rounded-full">
+              <AvatarImage src={avatarURL} width={160} height={160} />
+              <AvatarFallback className="text-lg">SF</AvatarFallback>
+            </Avatar>
+          </div>
+
+          <div className="flex max-w-[520px] flex-col gap-2">
+            <Paragraph>
+              Olá! Eu sou o{' '}
+              <mark className="rounded bg-black-200 px-0.5 font-medium text-white">
+                {name}
+              </mark>
+              , engenheiro de front-end.
+            </Paragraph>
+
+            <Paragraph>
+              Trabalho há mais de cinco anos na criação de interfaces agradáveis
+              e modernas. Sou apaixonado pela área, à procura de novos desafios
+              e soluções eficientes. Também gosto de{' '}
+              <strong>automatizar processos</strong> e atualmente resido em{' '}
+              {location}.
+            </Paragraph>
+
+            <Paragraph>
+              Nas horas vagas, pratico natação, musculação e atletismo. Outros
+              interesses incluem games, cinema clássico.
+            </Paragraph>
+          </div>
         </div>
 
         <Paragraph>
-          <mark className="rounded bg-black-200 px-0.5 font-medium text-white">
-            Olá!
-          </mark>{' '}
-          Eu sou o <strong>{name}</strong>, engenheiro de front-end.
+          Algumas tecnologias com as quais trabalho incluem:{' '}
         </Paragraph>
 
-        <Paragraph>
-          Trabalho há mais de cinco anos na criação de interfaces agradáveis e
-          modernas. Sou apaixonado pela área, à procura de novos desafios e
-          soluções eficientes.
-        </Paragraph>
+        <Skills />
 
-        <Paragraph>
-          Eu gosto de <strong>automatizar processos</strong>.
-        </Paragraph>
-
-        <Paragraph>Atualmente, resido em {location}.</Paragraph>
-
-        <div>
-          <Paragraph>
-            Algumas tecnologias com as quais trabalho incluem:{' '}
-          </Paragraph>
-
-          <Skills />
-        </div>
+        <Button variant="cta" className="flex max-w-max gap-2 bg-blue">
+          <FileText />
+          Currículo
+        </Button>
       </div>
     </section>
   )

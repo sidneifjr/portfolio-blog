@@ -43,7 +43,7 @@ export function NavMenu() {
   const pathname = usePathname()
 
   return (
-    <NavigationMenu className="nav-menu flex flex-1 items-start justify-normal">
+    <NavigationMenu className="nav-menu z-10 flex flex-1 items-start justify-normal">
       <NavigationMenuList className="flex w-full flex-col items-start gap-2">
         {menuItens.map((item) => {
           const { name, description, slug, icon } = item

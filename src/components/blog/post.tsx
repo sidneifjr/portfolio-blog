@@ -1,3 +1,4 @@
+import { MoveRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -38,7 +39,13 @@ export function Post({ slug, title, description, date, image }: PostTypes) {
         <Paragraph>{description}</Paragraph>
 
         <Link className="w-max" href={`/blog/${slug}`}>
-          <Button>Leia mais</Button>
+          <Button variant="link" className="group flex gap-1.5">
+            Leia mais{' '}
+            <MoveRight
+              width={16}
+              className="transition-transform group-hover:translate-x-0.5"
+            />
+          </Button>
         </Link>
       </div>
     </div>

@@ -7,7 +7,7 @@ interface H1Props extends HTMLAttributes<HTMLHeadingElement> {
 
 export function H1({ children, className }: H1Props) {
   const classes = twMerge(
-    'scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl',
+    'scroll-m-20 text-6xl font-bold tracking-tight',
     className,
   )
 
